@@ -10,13 +10,14 @@ namespace CleanArchitecture.Core.Entities
     public class User : AuditableBaseEntity
     {
         public UserRoles UserType { get; set; }
-        public String Name { get; set; }
-        public String Surname { get; set; }
-        public String Email { get; set; }
-        public String Password { get; set; }
-        public Boolean EmailConfirmed { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public bool EmailConfirmed { get; set; }
         public List<User> Followings { get; set; }
         public List<User> Followers { get; set; }
+        public Account Account { get; set; }
 
     }
 }
