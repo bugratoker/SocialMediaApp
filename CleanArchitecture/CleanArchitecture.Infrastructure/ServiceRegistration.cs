@@ -24,6 +24,7 @@ namespace CleanArchitecture.Infrastructure
     {
         public static void AddPersistenceInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
+            #region Choose Database
             if (configuration.GetValue<bool>("UseInMemoryDatabase"))
             {
                 services.AddDbContext<ApplicationDbContext>(options =>
@@ -36,13 +37,9 @@ namespace CleanArchitecture.Infrastructure
                    configuration.GetConnectionString("DefaultConnection"),
                    b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
             }
-
-
-
-            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
-            #region Services
-            services.AddTransient<IAccountService, AccountService>();
             #endregion
+
+            #region JWT Settings
             services.Configure<JWTSettings>(configuration.GetSection("JWTSettings"));
             services.AddAuthentication(options =>
             {
@@ -90,19 +87,27 @@ namespace CleanArchitecture.Infrastructure
                         },
                     };
                 });
+            #endregion
 
-
-
-
+            #region Configuration Settings
+            services.Configure<AzureStorageSettings>(configuration.GetSection("AzureStorageSettings"));
             services.Configure<MailSettings>(configuration.GetSection("MailSettings"));
+            #endregion
+
+            #region Services
+            services.AddTransient<IAccountService, AccountService>();
+            services.AddTransient<IAzureStorageService, AzureStorageService>();
             services.AddTransient<IDateTimeService, DateTimeService>();
             services.AddTransient<IEmailService, EmailService>();
-
+            #endregion
 
             #region Repositories
             services.AddTransient(typeof(IGenericRepositoryAsync<>), typeof(GenericRepositoryAsync<>));
             services.AddTransient<IProductRepositoryAsync, ProductRepositoryAsync>();
+            services.AddTransient<IUserRepositoryAsync, UserRepositoryAsync>();
             #endregion
+
+            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
         }
     }
 }

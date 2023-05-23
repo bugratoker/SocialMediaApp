@@ -16,4 +16,10 @@
     <PackageReference Include="System.Text.Json" Version="4.7.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\User\Commands\DeleteUserById\" />
+    <Folder Include="Features\User\Commands\UpdateUser\" />
+    <Folder Include="Features\User\Queries\GetUserById\" />
+  </ItemGroup>
+
 </Project>

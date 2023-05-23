@@ -9,15 +9,15 @@ namespace CleanArchitecture.Core.Entities
 {
     public class User : AuditableBaseEntity
     {
-        public UserRoles UserType { get; set; }
+        public UserRoles UserType { get; set; } = UserRoles.RegisteredUser;
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public bool EmailConfirmed { get; set; }
-        public List<User> Followings { get; set; }
-        public List<User> Followers { get; set; }
-        public Account Account { get; set; }
+        //public List<User> Followings { get; set; }
+        //public List<User> Followers { get; set; }
+        //public Account Account { get; set; }
 
     }
 }

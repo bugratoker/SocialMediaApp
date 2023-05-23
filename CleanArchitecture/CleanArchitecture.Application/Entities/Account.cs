@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace CleanArchitecture.Core.Entities
 {
-    internal class Account
+    public class Account : AuditableBaseEntity
     {
+        public List<Post> Posts { get; set; }
+
+
+
     }
 }
