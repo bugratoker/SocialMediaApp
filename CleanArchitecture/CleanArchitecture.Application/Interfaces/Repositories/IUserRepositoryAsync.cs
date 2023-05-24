@@ -9,5 +9,6 @@ namespace CleanArchitecture.Core.Interfaces.Repositories
 {
     public interface IUserRepositoryAsync : IGenericRepositoryAsync<User>
     {
+        Task<User> GetByEmailAsync(string email);
     }
 }
