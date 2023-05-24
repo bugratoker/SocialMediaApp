@@ -18,5 +18,10 @@ namespace CleanArchitecture.Infrastructure.Repositories
         {
             _users = dbContext.Set<User>();
         }
+
+        public Task<User> GetByEmailAsync(string email)
+        {
+            return _users.FirstAsync(x => x.Email == email);
+        }
     }
 }
