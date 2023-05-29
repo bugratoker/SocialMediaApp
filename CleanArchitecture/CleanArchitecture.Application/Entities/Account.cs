@@ -8,7 +8,9 @@ namespace CleanArchitecture.Core.Entities
 {
     public class Account : AuditableBaseEntity
     {
-        public List<Post> Posts { get; set; }
+        public User User { get; set; }
+        public int UserId { get; set; }
+        public List<Post> Posts { get; set; } = null;
 
 
 

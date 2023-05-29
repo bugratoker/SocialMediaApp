@@ -1,18 +1,13 @@
 using CleanArchitecture.Core;
 using CleanArchitecture.Core.Interfaces;
 using CleanArchitecture.Infrastructure;
-using CleanArchitecture.Infrastructure.Models;
 using CleanArchitecture.WebApi.Extensions;
-using CleanArchitecture.WebApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Serilog;
-using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,7 +22,7 @@ builder.Services.AddSwaggerExtension();
 builder.Services.AddControllers();
 builder.Services.AddApiVersioningExtension();
 builder.Services.AddHealthChecks();
-builder.Services.AddScoped<IAuthenticatedUserService, AuthenticatedUserService>();
+
 
 //Build the application
 var app = builder.Build();
@@ -64,7 +59,7 @@ Log.Logger = new LoggerConfiguration()
                 .CreateLogger();
 
 //Seed Default Data
-using (var scope = app.Services.CreateScope())
+/*using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
     var loggerFactory = services.GetRequiredService<ILoggerFactory>();
@@ -87,7 +82,7 @@ using (var scope = app.Services.CreateScope())
     {
         Log.CloseAndFlush();
     }
-}
+}*/
 
 //Start the application
 app.Run();

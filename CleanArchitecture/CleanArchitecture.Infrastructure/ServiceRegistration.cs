@@ -3,13 +3,11 @@ using CleanArchitecture.Core.Interfaces.Repositories;
 using CleanArchitecture.Core.Wrappers;
 using CleanArchitecture.Core.Settings;
 using CleanArchitecture.Infrastructure.Contexts;
-using CleanArchitecture.Infrastructure.Models;
 using CleanArchitecture.Infrastructure.Repositories;
 using CleanArchitecture.Infrastructure.Repository;
 using CleanArchitecture.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,15 +25,15 @@ namespace CleanArchitecture.Infrastructure
             #region Choose Database
             if (configuration.GetValue<bool>("UseInMemoryDatabase"))
             {
-                services.AddDbContext<ApplicationDbContext>(options =>
+                services.AddDbContext<AppDbContext>(options =>
                     options.UseInMemoryDatabase("ApplicationDb"));
             }
             else
             {
-                services.AddDbContext<ApplicationDbContext>(options =>
+                services.AddDbContext<AppDbContext>(options =>
                options.UseSqlServer(
-                   configuration.GetConnectionString("DefaultConnection"),
-                   b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+                   configuration.GetConnectionString("DefaultConnection")));/*,
+                   b => b.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName)));*/
             }
             #endregion
 
@@ -95,7 +93,7 @@ namespace CleanArchitecture.Infrastructure
             #endregion
 
             #region Services
-            services.AddTransient<IAccountService, AccountService>();
+           
             services.AddTransient<IAzureStorageService, AzureStorageService>();
             services.AddTransient<IDateTimeService, DateTimeService>();
             services.AddTransient<IEmailService, EmailService>();
@@ -105,9 +103,11 @@ namespace CleanArchitecture.Infrastructure
             services.AddTransient(typeof(IGenericRepositoryAsync<>), typeof(GenericRepositoryAsync<>));
             services.AddTransient<IProductRepositoryAsync, ProductRepositoryAsync>();
             services.AddTransient<IUserRepositoryAsync, UserRepositoryAsync>();
+            services.AddTransient<IAccountRepositoryAsync, AccountRepositoryAsync>();
+            services.AddTransient<IFollowerRepositoryAsync, FollowerRepositoryAsync>();
             #endregion
 
-            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+           // services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
         }
     }
 }

@@ -20,9 +20,6 @@ C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Ba
 C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\MessagePack.dll
 C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\MessagePack.Annotations.dll
 C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
-C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Versioning.dll
@@ -57,8 +54,6 @@ C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Ba
 C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
 C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
-C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
-C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.Identity.Client.dll
 C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
 C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
@@ -115,7 +110,6 @@ C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Ba
 C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\System.Composition.Runtime.dll
 C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\System.Composition.TypedParts.dll
 C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
-C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\System.Drawing.Common.dll
 C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\System.Memory.Data.dll
@@ -321,3 +315,17 @@ C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Ba
 C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Azure.Storage.Common.dll
 C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Azure.Storage.Queues.dll
 C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\System.IO.Hashing.dll
+C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll

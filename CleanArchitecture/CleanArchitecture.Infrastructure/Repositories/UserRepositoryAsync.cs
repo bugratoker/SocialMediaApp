@@ -14,14 +14,21 @@ namespace CleanArchitecture.Infrastructure.Repositories
     public class UserRepositoryAsync : GenericRepositoryAsync<User>,IUserRepositoryAsync
     {
         public readonly DbSet<User> _users;
-        public UserRepositoryAsync(ApplicationDbContext dbContext) : base(dbContext)
+        public UserRepositoryAsync(AppDbContext dbContext) : base(dbContext)
         {
             _users = dbContext.Set<User>();
+            
         }
 
         public Task<User> GetByEmailAsync(string email)
         {
             return _users.FirstAsync(x => x.Email == email);
+        }
+
+        public async Task<User> GetByUsernameAsync(string username)
+        {
+            var user = await _users.Include(u => u.Followers).SingleOrDefaultAsync(u=> u.Username == username);
+            return user;
         }
     }
 }

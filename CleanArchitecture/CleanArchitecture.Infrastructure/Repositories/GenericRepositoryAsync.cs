@@ -9,9 +9,9 @@ namespace CleanArchitecture.Infrastructure.Repository
 {
     public class GenericRepositoryAsync<T> : IGenericRepositoryAsync<T> where T : class
     {
-        private readonly ApplicationDbContext _dbContext;
+        private readonly AppDbContext _dbContext;
 
-        public GenericRepositoryAsync(ApplicationDbContext dbContext)
+        public GenericRepositoryAsync(AppDbContext dbContext)
         {
             _dbContext = dbContext;
         }

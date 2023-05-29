@@ -12,7 +12,9 @@ namespace CleanArchitecture.Core.Entities
 
         public string Description { get; set; }
         public string Content { get; set; }
-        public Blob Photo{ get; set; }
-        public User Holder { get; set; }
+        //public Blob Photo{ get; set; }
+        public Account Account { get; set; }
+        public int AccountId { get; set; }
+ 
     }
 }

@@ -1,9 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace CleanArchitecture.Core.Entities
 {
     public abstract class AuditableBaseEntity
     {
+        [Key]
         public virtual int Id { get; set; }
         public string CreatedBy { get; set; }
         public DateTime Created { get; set; }

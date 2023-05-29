@@ -34,11 +34,11 @@ namespace CleanArchitecture.Core.Features.User.Commands.DeleteUserById
             var user = _userRepository.GetByEmailAsync(request.Email).Result;
             if (user.Password == request.Password) {   
                 await _userRepository.DeleteAsync(user);
-                return new Response<int>(user.Id, message: $"user added id : {user.Id}, name : {user.Name}");
+                return new Response<int>(user.Id, message: $"user deleted id : {user.Id}, name : {user.Name}");
             }
             else
             {
-                return new Response<int>(message: $"user cannot added id : {user.Id} because password is incorrect ");
+                return new Response<int>(message: $"user cannot deleted id : {user.Id} because password is incorrect ");
 
             }
             

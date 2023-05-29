@@ -29,7 +29,6 @@ namespace CleanArchitecture.Core.Features.User.Commands.UploadUserPhoto
             _azureStorageService = azureStorageService;
             _logger = logger;
         }
-
         public async Task<Response<string>> Handle(UploadUserPhotoCommand request, CancellationToken cancellationToken)
         {
             var response = await 

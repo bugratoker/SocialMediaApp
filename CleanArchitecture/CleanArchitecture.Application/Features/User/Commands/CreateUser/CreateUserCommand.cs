@@ -19,24 +19,42 @@ namespace CleanArchitecture.Core.Features.User.Commands.CreateUser
         public string Surname { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string Username { get; set; }
 
 
     }
-    public class CreateProductCommandHandler : IRequestHandler<CreateUserCommand, Response<int>>
+    public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Response<int>>
     {
         private readonly IUserRepositoryAsync _userRepository;
+        private readonly IAccountRepositoryAsync _accountRepository;
         private readonly IMapper _mapper;
-        public CreateProductCommandHandler(IUserRepositoryAsync userRepositoryAsync, IMapper mapper)
+        public CreateUserCommandHandler(IUserRepositoryAsync userRepositoryAsync,
+            IMapper mapper,
+            IAccountRepositoryAsync accountRepositoryAsync)
         {
             _userRepository = userRepositoryAsync;
             _mapper = mapper;
+            _accountRepository = accountRepositoryAsync;
         }
 
         public async Task<Response<int>> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
             var user = _mapper.Map<Entities.User>(request);
-            await _userRepository.AddAsync(user);
-            return new Response<int>(user.Id,message:$"user added id : {user.Id}, name : {user.Name}");
+
+            var userSaved = await _userRepository.AddAsync(user);
+
+            var account = new Account
+            {
+                UserId = userSaved.Id,
+                Created = DateTime.UtcNow,
+                CreatedBy = user.Name,
+                LastModifiedBy = user.Name,
+                LastModified = DateTime.UtcNow,
+            };
+
+            await _accountRepository.AddAsync(account);
+
+            return new Response<int>(user.Id,message:$"user added id : {user.Id}, name : {user.Name}, account added id: {account.Id}");
         }
     }
 }

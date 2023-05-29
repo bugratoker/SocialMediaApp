@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CleanArchitecture.Core.DTOs.User;
 using CleanArchitecture.Core.Entities;
 using CleanArchitecture.Core.Features.Products.Commands.CreateProduct;
 using CleanArchitecture.Core.Features.Products.Queries.GetAllProducts;
@@ -13,8 +14,9 @@ namespace CleanArchitecture.Core.Mappings
             CreateMap<Product, GetAllProductsViewModel>().ReverseMap();
             CreateMap<CreateProductCommand, Product>();
             CreateMap<GetAllProductsQuery, GetAllProductsParameter>();
-
+                      //from             //to
             CreateMap<CreateUserCommand, User>();
+            CreateMap<User, UserDTO>();
         }
     }
 }

@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\User\Queries\GetUserById\" />
+    <Folder Include="Features\User\Queries\GetUserFollowersById\" />
   </ItemGroup>
 
 </Project>

@@ -11,7 +11,7 @@ namespace CleanArchitecture.Infrastructure.Repositories
     {
         private readonly DbSet<Product> _products;
 
-        public ProductRepositoryAsync(ApplicationDbContext dbContext) : base(dbContext)
+        public ProductRepositoryAsync(AppDbContext dbContext) : base(dbContext)
         {
             _products = dbContext.Set<Product>();
         }
