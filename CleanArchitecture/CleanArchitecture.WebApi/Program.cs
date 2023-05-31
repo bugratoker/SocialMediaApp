@@ -2,12 +2,18 @@ using CleanArchitecture.Core;
 using CleanArchitecture.Core.Interfaces;
 using CleanArchitecture.Infrastructure;
 using CleanArchitecture.WebApi.Extensions;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Any;
+using Microsoft.OpenApi.Models;
 using Serilog;
+using Swashbuckle.AspNetCore.Filters;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,8 +24,32 @@ builder.Configuration.AddJsonFile("appsettings.Development.json", optional: true
 // Add services to the container.
 builder.Services.AddApplicationLayer();
 builder.Services.AddPersistenceInfrastructure(builder.Configuration);
-builder.Services.AddSwaggerExtension();
+builder.Services.AddSwaggerGen(options =>
+
+    {
+        options.AddSecurityDefinition("oauth2",
+        new OpenApiSecurityScheme
+        {
+            Description = "Standart Authorization header using the Bearer scheme",
+            In=ParameterLocation.Header,
+            Name="Authorization",
+            Type=SecuritySchemeType.ApiKey
+        });
+        options.OperationFilter<SecurityRequirementsOperationFilter>();
+    });
+//builder.Services.AddSwaggerExtension();
 builder.Services.AddControllers();
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options => {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(builder.Configuration.GetSection("JWTSettings:Key").Value)),
+            ValidateIssuer = false,
+            ValidateAudience=false
+        };
+    });
 builder.Services.AddApiVersioningExtension();
 builder.Services.AddHealthChecks();
 
@@ -40,6 +70,7 @@ app.UseHttpsRedirection();
 
 app.UseRouting();
 app.UseCors(options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseSwaggerExtension();

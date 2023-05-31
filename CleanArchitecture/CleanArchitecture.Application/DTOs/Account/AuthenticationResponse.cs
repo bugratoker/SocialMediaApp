@@ -5,7 +5,7 @@ namespace CleanArchitecture.Core.DTOs.Account
 {
     public class AuthenticationResponse
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
         public List<string> Roles { get; set; }
@@ -13,5 +13,6 @@ namespace CleanArchitecture.Core.DTOs.Account
         public string JWToken { get; set; }
         [JsonIgnore]
         public string RefreshToken { get; set; }
+
     }
 }

@@ -36,7 +36,7 @@ namespace CleanArchitecture.Infrastructure
                    b => b.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName)));*/
             }
             #endregion
-
+            /*
             #region JWT Settings
             services.Configure<JWTSettings>(configuration.GetSection("JWTSettings"));
             services.AddAuthentication(options =>
@@ -86,7 +86,7 @@ namespace CleanArchitecture.Infrastructure
                     };
                 });
             #endregion
-
+            */
             #region Configuration Settings
             services.Configure<AzureStorageSettings>(configuration.GetSection("AzureStorageSettings"));
             services.Configure<MailSettings>(configuration.GetSection("MailSettings"));

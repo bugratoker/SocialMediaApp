@@ -1,10 +1,11 @@
-﻿using CleanArchitecture.Core.Features.Products.Commands.CreateProduct;
-using CleanArchitecture.Core.Features.User.Commands.CreateUser;
+﻿using CleanArchitecture.Core.Features.User.Commands.CreateUser;
 using CleanArchitecture.Core.Features.User.Commands.DeleteUserById;
 using CleanArchitecture.Core.Features.User.Commands.FollowUser;
 using CleanArchitecture.Core.Features.User.Commands.UploadUserPhoto;
+using CleanArchitecture.Core.Features.User.Commands.UserAuthentication;
 using CleanArchitecture.Core.Features.User.Queries.GetFollowersOfUsersByUsername;
 using CleanArchitecture.Core.Features.User.Queries.GetUserByUsername;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.IO;
@@ -13,10 +14,19 @@ using System.Threading.Tasks;
 namespace CleanArchitecture.WebApi.Controllers.v1
 {
     [ApiVersion("1.0")]
+    [Authorize]
     public class UserController : BaseApiController
     {
+
+        #region Login
+        [HttpPost("Login"),AllowAnonymous]
+        public async Task<IActionResult> Login(UserAuthenticationCommand command)
+        {
+            return Ok(await Mediator.Send(command));
+        }
+        #endregion
         #region Create User
-        [HttpPost("CreateUser")]
+        [HttpPost("Register"),AllowAnonymous]
         public async Task<IActionResult> Post(CreateUserCommand command)
         {
             return Ok(await Mediator.Send(command));

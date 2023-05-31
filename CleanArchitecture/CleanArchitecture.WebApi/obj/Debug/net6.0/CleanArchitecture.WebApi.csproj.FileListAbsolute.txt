@@ -329,3 +329,11 @@ C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Ba
 C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\System.Text.Encodings.Web.dll
 C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\System.Text.Json.dll
 C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Scrutor.dll
+C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
