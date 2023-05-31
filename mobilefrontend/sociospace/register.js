@@ -4,8 +4,6 @@ import { styles } from './style.js';
 const LoginScreen = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
-  
 
   const handleLogin = () => {
     // Perform login authentication logic here
@@ -47,15 +45,14 @@ const LoginScreen = () => {
           value={email}
           onChangeText={(text) => setEmail(text)}
         />
-        
-      </View>  
-      <View style={styles.footer}>
         <TouchableOpacity style={styles.button} onPress={handleLogin}>
           <Text style={styles.buttonText}>Register</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={handleLogin}>
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
+      </View>  
+      <View style={styles.footer}>
       </View>  
     
     </View>
