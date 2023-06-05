@@ -11,25 +11,27 @@ const main = ({ navigation }) => {
     <View style={styles.container}>
       <View style= {styles.header}>
       <View style={{ flexDirection: 'row' }}>
-      <Image
-        source={require('../images/sspacelogo.png')}
-        style={{ width: 290, height: 50 }}
-      />
+      <TouchableOpacity  onPress={() => navigation.navigate('Main')}>
+        <Image
+          source={require('../images/sspacelogo.png')}
+          style={{ width: 290, height: 70 }}
+        />
+      </TouchableOpacity> 
       <Image
         source={require('../images/search.png')}
-        style={{ width: 60, height: 50 }}
+        style={{ width: 60, height: 70 }}
       />
       <Image
         source={require('../images/profile.png')}
-        style={{ width: 60, height: 50 }}
+        style={{ width: 60, height: 70 }}
       />
     </View>
       </View>
       <View style={styles.main}>
-        <Pressable onPress={() => navigation.navigate('signin')}>
+        <Pressable onPress={() => navigation.navigate('Sign In')}>
             <Text style={styles.title}>Login</Text>
         </Pressable>
-        <Pressable onPress={() => navigation.navigate('register')}>
+        <Pressable onPress={() => navigation.navigate('Register')}>
             <Text style={styles.title}>Register</Text>
         </Pressable>
       </View>  

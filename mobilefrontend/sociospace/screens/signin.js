@@ -21,7 +21,22 @@ const signin = ({ navigation }) => {
     
     <View style={styles.container}>
       <View style= {styles.header}>
-        <Image source={require('../images/sociospacewhite.png')} style={styles.logo} />
+      <View style={{ flexDirection: 'row' }}>
+      <TouchableOpacity  onPress={() => navigation.navigate('Main')}>
+        <Image
+          source={require('../images/sspacelogo.png')}
+          style={{ width: 290, height: 70 }}
+        />
+      </TouchableOpacity>  
+      <Image
+        source={require('../images/search.png')}
+        style={{ width: 60, height: 70 }}
+      />
+      <Image
+        source={require('../images/profile.png')}
+        style={{ width: 60, height: 70 }}
+      />
+    </View>
       </View>
       <View style={styles.main}>
         <Text style={styles.title}>Login</Text>
