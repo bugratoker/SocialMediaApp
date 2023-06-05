@@ -1,44 +1,23 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
-import { styles } from './style.js';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { createStackNavigator } from '@react-navigation/stack';
+import React from 'react'
+import {NavigationContainer} from '@react-navigation/native'
+import {createStackNavigator} from '@react-navigation/stack'
+import main from './screens/main'
+import signin from './screens/signin'
+import register from './screens/register'
 
-const Stack = createStackNavigator();
-const AnaSayfa = ({ navigation }) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+const Stack = createStackNavigator()
 
+const App = () => {
   return (
-    <View style={styles.container}>
-      <View style= {styles.header}>
-      <View style={{ flexDirection: 'row' }}>
-      <Image
-        source={require('./images/sspacelogo.png')}
-        style={{ width: 290, height: 50 }}
-        onPress={() => navigation.navigate('main')}
-      />
-      <Image
-        source={require('./images/search.png')}
-        style={{ width: 60, height: 50 }}
-      />
-      <Image
-        source={require('./images/profile.png')}
-        style={{ width: 60, height: 50 }}
-        onPress={() => navigation.navigate('signin')}
-      />
-    </View>
-      </View>
-      <View style={styles.main}>
-        
-      </View>  
-      <View style={styles.footer}>
-      </View>  
-    
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator 
+        initialRouteName="main">
+        <Stack.Screen name="Sign In" component={signin} />
+        <Stack.Screen name="Register" component={register} />
+        <Stack.Screen name="Main" component={main} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
-
-
-export default AnaSayfa;
+export default App;
