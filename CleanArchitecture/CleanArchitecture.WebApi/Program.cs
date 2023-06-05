@@ -24,6 +24,7 @@ builder.Configuration.AddJsonFile("appsettings.Development.json", optional: true
 // Add services to the container.
 builder.Services.AddApplicationLayer();
 builder.Services.AddPersistenceInfrastructure(builder.Configuration);
+/*
 builder.Services.AddSwaggerGen(options =>
 
     {
@@ -37,7 +38,8 @@ builder.Services.AddSwaggerGen(options =>
         });
         options.OperationFilter<SecurityRequirementsOperationFilter>();
     });
-//builder.Services.AddSwaggerExtension();
+*/
+builder.Services.AddSwaggerExtension();
 builder.Services.AddControllers();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options => {

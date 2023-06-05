@@ -57,7 +57,7 @@ namespace CleanArchitecture.Core.Features.User.Commands.UserAuthentication
                 var response = new AuthenticationResponse() {
                     Id = user.Id,
                     Email = user.Email,
-                    UserName = user.Email, 
+                    UserName = user.Username, 
                     IsVerified = true,
                     JWToken = jwt };
 

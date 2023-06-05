@@ -13,7 +13,7 @@ namespace CleanArchitecture.Infrastructure.Repositories
 {
     public class UserRepositoryAsync : GenericRepositoryAsync<User>,IUserRepositoryAsync
     {
-        public readonly DbSet<User> _users;
+        public readonly DbSet<User> _users; 
         public UserRepositoryAsync(AppDbContext dbContext) : base(dbContext)
         {
             _users = dbContext.Set<User>();
@@ -29,6 +29,19 @@ namespace CleanArchitecture.Infrastructure.Repositories
         {
             var user = await _users.Include(u => u.Followers).SingleOrDefaultAsync(u=> u.Username == username);
             return user;
+        }
+
+        public async Task<User> UpdateUserProfilePhoto(string username,string url)
+        {
+            var result = await _users.SingleOrDefaultAsync(u => u.Username==username);
+
+            if (result != null)
+            {
+                result.ProfilePhoto = url;
+                await _dbContext.SaveChangesAsync();
+                   
+            }
+            return result;
         }
     }
 }

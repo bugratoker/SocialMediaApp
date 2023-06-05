@@ -27,7 +27,7 @@ namespace CleanArchitecture.Core.Features.User.Commands.CreateUser
     {
         private readonly IUserRepositoryAsync _userRepository;
         private readonly IAccountRepositoryAsync _accountRepository;
-        private readonly IMapper _mapper;
+        private readonly IMapper _mapper;   
         public CreateUserCommandHandler(IUserRepositoryAsync userRepositoryAsync,
             IMapper mapper,
             IAccountRepositoryAsync accountRepositoryAsync)

@@ -2,6 +2,7 @@
 using CleanArchitecture.Core.Features.User.Commands.DeleteUserById;
 using CleanArchitecture.Core.Features.User.Commands.FollowUser;
 using CleanArchitecture.Core.Features.User.Commands.UploadUserPhoto;
+using CleanArchitecture.Core.Features.User.Commands.UploadUserProfilePhoto;
 using CleanArchitecture.Core.Features.User.Commands.UserAuthentication;
 using CleanArchitecture.Core.Features.User.Queries.GetFollowersOfUsersByUsername;
 using CleanArchitecture.Core.Features.User.Queries.GetUserByUsername;
@@ -17,7 +18,10 @@ namespace CleanArchitecture.WebApi.Controllers.v1
     [Authorize]
     public class UserController : BaseApiController
     {
-
+        //examplesociospace.database.windows.net
+        //tokerbugra
+        //sociospace2023_
+        //C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\CleanArchitecture.WebApi.xml
         #region Login
         [HttpPost("Login"),AllowAnonymous]
         public async Task<IActionResult> Login(UserAuthenticationCommand command)
@@ -63,6 +67,31 @@ namespace CleanArchitecture.WebApi.Controllers.v1
             return Ok(result);
         }
         #endregion
+        #region Upload User Profile Photo
+        [HttpPost("{id}/UploadUserProfilePhoto")]
+        public async Task<IActionResult> UploadUserProfilePhoto(int id, IFormFile formFile)
+        {
+
+
+            byte[] imageData;
+            using (var stream = new MemoryStream())
+            {
+                formFile.CopyTo(stream);
+                imageData = stream.ToArray();
+            }
+
+            var result = await Mediator.Send(new UploadUserProfilePhotoCommand
+            {
+                UserId = id,
+                ImageData = imageData,
+                ContentType = formFile.ContentType
+
+            });
+
+            return Ok(result);
+        }
+        #endregion
+
         #region Follow User
         [HttpPost("{userId}/{followedUserId}/FollowUser")]
         public async Task<IActionResult> FollowUser(int userId,int followedUserId)

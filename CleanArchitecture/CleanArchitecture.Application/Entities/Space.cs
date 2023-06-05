@@ -10,7 +10,9 @@ namespace CleanArchitecture.Core.Entities
     public class Space : BaseEntity
     {
         public string SpaceName { get; set; }
-        public Blob Image { get; set; }
+        public string ImageUrl { get; set; }
+        public ICollection<Post> Posts { get; set; }
+
 
     }
 }

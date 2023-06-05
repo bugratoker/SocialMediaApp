@@ -9,5 +9,6 @@ namespace CleanArchitecture.Core.Interfaces.Repositories
 {
     public interface IAccountRepositoryAsync : IGenericRepositoryAsync<Account>
     {
+        Task<Account> GetByUserIdAsync(int id);
     }
 }

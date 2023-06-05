@@ -11,5 +11,6 @@ namespace CleanArchitecture.Core.Interfaces.Repositories
     {
         Task<User> GetByEmailAsync(string email);
         Task<User> GetByUsernameAsync(string username);
+        Task<User> UpdateUserProfilePhoto(string username,string url);
     }
 }

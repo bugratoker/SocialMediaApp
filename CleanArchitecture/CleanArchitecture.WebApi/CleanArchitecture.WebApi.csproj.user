@@ -7,5 +7,6 @@
     <ActiveDebugProfile>CleanArchitecture.WebApi</ActiveDebugProfile>
     <Controller_SelectedScaffolderID>MvcControllerEmptyScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Common/MVC/Controller</Controller_SelectedScaffolderCategoryPath>
+    <NameOfLastUsedPublishProfile>C:\Users\bugra\Downloads\CSE332_23B_Term_Project_Base\CSE332_23B_Term_Project\Backend\CleanArchitecture\CleanArchitecture.WebApi\Properties\PublishProfiles\sociospace - Zip Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

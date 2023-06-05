@@ -10,7 +10,7 @@ namespace CleanArchitecture.Core.Entities
     {
         public User User { get; set; }
         public int UserId { get; set; }
-        public List<Post> Posts { get; set; } = null;
+        public ICollection<Post> Posts { get; set; }
 
 
 

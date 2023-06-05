@@ -15,6 +15,7 @@ namespace CleanArchitecture.Core.Features.User.Commands.UpdateUser
         public string Surname { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string ProfilePhoto { get; set; }
 
     }
     public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommand, Response<int>>

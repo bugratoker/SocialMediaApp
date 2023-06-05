@@ -19,6 +19,7 @@ namespace CleanArchitecture.Infrastructure.Contexts
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<Follower> Followers{ get; set; }
+        public DbSet<Space> Spaces{ get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

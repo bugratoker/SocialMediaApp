@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace CleanArchitecture.WebApi.Extensions
 {
@@ -11,7 +12,11 @@ namespace CleanArchitecture.WebApi.Extensions
         public static void AddSwaggerExtension(this IServiceCollection services)
         {
             services.AddSwaggerGen(c =>
+
             {
+
+                //var filePath = Path.Combine(AppContext.BaseDirectory, "CleanArchitecture.WebApi.xml");
+                //c.IncludeXmlComments(filePath);
                 c.IncludeXmlComments(string.Format(@"{0}\CleanArchitecture.WebApi.xml", System.AppDomain.CurrentDomain.BaseDirectory));
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {

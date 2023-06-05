@@ -33,6 +33,7 @@ namespace CleanArchitecture.Infrastructure
                 services.AddDbContext<AppDbContext>(options =>
                options.UseSqlServer(
                    configuration.GetConnectionString("DefaultConnection")));/*,
+                   DefaultConnection
                    b => b.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName)));*/
             }
             #endregion
@@ -105,6 +106,8 @@ namespace CleanArchitecture.Infrastructure
             services.AddTransient<IUserRepositoryAsync, UserRepositoryAsync>();
             services.AddTransient<IAccountRepositoryAsync, AccountRepositoryAsync>();
             services.AddTransient<IFollowerRepositoryAsync, FollowerRepositoryAsync>();
+            services.AddTransient<IPostRepositoryAsync, PostRepositoryAsync>();
+            services.AddTransient<ISpaceRepositoryAsync, SpaceRepositoryAsync>();
             #endregion
 
            // services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();

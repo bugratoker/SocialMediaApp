@@ -19,5 +19,11 @@ namespace CleanArchitecture.Infrastructure.Repositories
         {
             _account = dbContext.Set<Account>();
         }
+
+        public async Task<Account> GetByUserIdAsync(int id)
+        {
+            var result = await _account.FirstOrDefaultAsync(x => x.UserId == id);
+            return result ?? throw new Exception("account is not exist");
+        }
     }
 }
