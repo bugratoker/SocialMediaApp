@@ -3,6 +3,7 @@ using CleanArchitecture.Core.Interfaces.Repositories;
 using CleanArchitecture.Infrastructure.Contexts;
 using CleanArchitecture.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
+using Org.BouncyCastle.Math.EC.Rfc7748;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,6 @@ namespace CleanArchitecture.Infrastructure.Repositories
             var user = await _users.Include(u => u.Followers).SingleOrDefaultAsync(u=> u.Username == username);
             return user;
         }
-
         public async Task<User> UpdateUserProfilePhoto(string username,string url)
         {
             var result = await _users.SingleOrDefaultAsync(u => u.Username==username);
@@ -42,6 +42,15 @@ namespace CleanArchitecture.Infrastructure.Repositories
                    
             }
             return result;
+        }
+        public Task<bool> IsUniqueEmail(string email)
+        {                           //bütün userlar bu kosulu sağlıyor ise true döner
+            return _users.AllAsync(x => x.Email != email);
+        }
+
+        public Task<bool> IsUniqueUsername(string username)
+        {
+            return _users.AllAsync(x => x.Username != username);
         }
     }
 }

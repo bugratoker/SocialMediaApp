@@ -32,7 +32,7 @@ namespace CleanArchitecture.Infrastructure
             {
                 services.AddDbContext<AppDbContext>(options =>
                options.UseSqlServer(
-                   configuration.GetConnectionString("AzureConnection")));/*,
+                   configuration.GetConnectionString("DefaultConnection")));/*,
                    DefaultConnection
                    b => b.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName)));*/
             }

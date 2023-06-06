@@ -32,7 +32,7 @@ namespace CleanArchitecture.WebApi.Middlewares
 
                 switch (error)
                 {
-                    case Core.Exceptions.ApiException e:
+                    case ApiException e:
                         // custom application error
                         response.StatusCode = (int)HttpStatusCode.BadRequest;
                         break;

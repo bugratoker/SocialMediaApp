@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/vUmoaDsOvHQ0a6Xo/krRmU0desGMletjVfuNsLpKwGNA8u0HTc9vJ4T6oKlvTXPlYhdoVp5xY+Y0USLbUJ0zA==",
+  "dgSpecHash": "i3amczQXfPhrrZStPOru6bpN8i3nYuBOgdFUFYGEkeb90WMdE3xaDHATj/ydMIoQBGg7v2o1YNVGHRPdAu8aEw==",
   "success": true,
   "projectFilePath": "C:\\Users\\bugra\\Downloads\\CSE332_23B_Term_Project_Base\\CSE332_23B_Term_Project\\Backend\\Tests\\CleanArchitecture.Infrastructure.Tests\\CleanArchitecture.Infrastructure.Tests.csproj",
   "expectedPackageFiles": [
@@ -16,9 +16,9 @@
     "C:\\Users\\bugra\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\bugra\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\bugra\\.nuget\\packages\\fare\\2.1.1\\fare.2.1.1.nupkg.sha512",
-    "C:\\Users\\bugra\\.nuget\\packages\\fluentvalidation\\11.5.2\\fluentvalidation.11.5.2.nupkg.sha512",
-    "C:\\Users\\bugra\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
-    "C:\\Users\\bugra\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.2\\fluentvalidation.dependencyinjectionextensions.11.5.2.nupkg.sha512",
+    "C:\\Users\\bugra\\.nuget\\packages\\fluentvalidation\\10.4.0\\fluentvalidation.10.4.0.nupkg.sha512",
+    "C:\\Users\\bugra\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.4.0\\fluentvalidation.aspnetcore.10.4.0.nupkg.sha512",
+    "C:\\Users\\bugra\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.4.0\\fluentvalidation.dependencyinjectionextensions.10.4.0.nupkg.sha512",
     "C:\\Users\\bugra\\.nuget\\packages\\mailkit\\2.8.0\\mailkit.2.8.0.nupkg.sha512",
     "C:\\Users\\bugra\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512",
     "C:\\Users\\bugra\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\8.1.0\\mediatr.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",

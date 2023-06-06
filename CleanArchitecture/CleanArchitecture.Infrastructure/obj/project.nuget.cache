@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fPEgZ2vFjenEcU6Axv12GPcW4WUUDBC1xd7gfCh1UgSV1092UmeD+GMukES0cMx/8ihFXUE4Ep51zkOZEsvg5w==",
+  "dgSpecHash": "3dWD5f9Fna+bix1tX6AZ3aYmm4uT42QqFOLvOy3k4ecMuKnFbTLGpDyNFUoXyucT1+2+c3/9xwtbRW0Fxg/cew==",
   "success": true,
   "projectFilePath": "C:\\Users\\bugra\\Downloads\\CSE332_23B_Term_Project_Base\\CSE332_23B_Term_Project\\Backend\\CleanArchitecture\\CleanArchitecture.Infrastructure\\CleanArchitecture.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -11,9 +11,9 @@
     "C:\\Users\\bugra\\.nuget\\packages\\azure.storage.blobs\\12.16.0\\azure.storage.blobs.12.16.0.nupkg.sha512",
     "C:\\Users\\bugra\\.nuget\\packages\\azure.storage.common\\12.15.0\\azure.storage.common.12.15.0.nupkg.sha512",
     "C:\\Users\\bugra\\.nuget\\packages\\azure.storage.queues\\12.14.0\\azure.storage.queues.12.14.0.nupkg.sha512",
-    "C:\\Users\\bugra\\.nuget\\packages\\fluentvalidation\\11.5.2\\fluentvalidation.11.5.2.nupkg.sha512",
-    "C:\\Users\\bugra\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
-    "C:\\Users\\bugra\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.2\\fluentvalidation.dependencyinjectionextensions.11.5.2.nupkg.sha512",
+    "C:\\Users\\bugra\\.nuget\\packages\\fluentvalidation\\10.4.0\\fluentvalidation.10.4.0.nupkg.sha512",
+    "C:\\Users\\bugra\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.4.0\\fluentvalidation.aspnetcore.10.4.0.nupkg.sha512",
+    "C:\\Users\\bugra\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.4.0\\fluentvalidation.dependencyinjectionextensions.10.4.0.nupkg.sha512",
     "C:\\Users\\bugra\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\bugra\\.nuget\\packages\\mailkit\\2.8.0\\mailkit.2.8.0.nupkg.sha512",
     "C:\\Users\\bugra\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512",

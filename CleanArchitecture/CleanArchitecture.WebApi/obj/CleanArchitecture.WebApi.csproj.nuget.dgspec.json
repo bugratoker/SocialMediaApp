@@ -50,15 +50,15 @@
             },
             "FluentValidation": {
               "target": "Package",
-              "version": "[11.5.2, )"
+              "version": "[10.4.0, )"
             },
             "FluentValidation.AspNetCore": {
               "target": "Package",
-              "version": "[11.3.0, )"
+              "version": "[10.4.0, )"
             },
             "FluentValidation.DependencyInjectionExtensions": {
               "target": "Package",
-              "version": "[11.5.2, )"
+              "version": "[10.4.0, )"
             },
             "MediatR.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",

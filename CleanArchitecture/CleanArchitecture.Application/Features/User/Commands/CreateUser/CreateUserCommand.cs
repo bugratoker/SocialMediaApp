@@ -39,9 +39,13 @@ namespace CleanArchitecture.Core.Features.User.Commands.CreateUser
 
         public async Task<Response<int>> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
+            
+
             var user = _mapper.Map<Entities.User>(request);
 
             var userSaved = await _userRepository.AddAsync(user);
+
+
 
             var account = new Account
             {
