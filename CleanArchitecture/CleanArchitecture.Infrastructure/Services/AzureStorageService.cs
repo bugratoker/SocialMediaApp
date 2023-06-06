@@ -11,17 +11,17 @@ namespace CleanArchitecture.Infrastructure.Services
     //azurite --silent --location c:\azurite --debug c:\azurite\debug.log
     public class AzureStorageService : IAzureStorageService
     {
-        private AzureStorageSettings _azureStorageSettings;
-        public AzureStorageService(IOptions<AzureStorageSettings> options)
+        private AzurePortalStorageSettings azureStorageSettings;
+        public AzureStorageService(IOptions<AzurePortalStorageSettings> options)
         {
-            _azureStorageSettings = options.Value;
+            azureStorageSettings = options.Value;
             
         }
 
         public async Task<string> UploadUserImageToBlob(byte[] image,string contentType)
         {
-            var blobServiceClient = new BlobServiceClient(_azureStorageSettings.ConnectionString);
-            var blobContainer = blobServiceClient.GetBlobContainerClient(_azureStorageSettings.UserImagesContainerName);
+            var blobServiceClient = new BlobServiceClient(azureStorageSettings.ConnectionString);
+            var blobContainer = blobServiceClient.GetBlobContainerClient(azureStorageSettings.ContainerName);
 
             var imageName = Guid.NewGuid().ToString();
             var blobClient = blobContainer.GetBlobClient(imageName);

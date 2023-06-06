@@ -17,7 +17,7 @@ namespace CleanArchitecture.WebApi.Extensions
 
                 //var filePath = Path.Combine(AppContext.BaseDirectory, "CleanArchitecture.WebApi.xml");
                 //c.IncludeXmlComments(filePath);
-                c.IncludeXmlComments(string.Format(@"{0}\CleanArchitecture.WebApi.xml", System.AppDomain.CurrentDomain.BaseDirectory));
+                c.IncludeXmlComments(string.Format(@"{0}CleanArchitecture.WebApi.xml", System.AppDomain.CurrentDomain.BaseDirectory));
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",

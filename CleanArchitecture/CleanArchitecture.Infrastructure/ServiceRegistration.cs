@@ -32,7 +32,7 @@ namespace CleanArchitecture.Infrastructure
             {
                 services.AddDbContext<AppDbContext>(options =>
                options.UseSqlServer(
-                   configuration.GetConnectionString("DefaultConnection")));/*,
+                   configuration.GetConnectionString("AzureConnection")));/*,
                    DefaultConnection
                    b => b.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName)));*/
             }
@@ -89,12 +89,13 @@ namespace CleanArchitecture.Infrastructure
             #endregion
             */
             #region Configuration Settings
-            services.Configure<AzureStorageSettings>(configuration.GetSection("AzureStorageSettings"));
+            //services.Configure<AzureStorageSettings>(configuration.GetSection("AzureStorageSettings"));
             services.Configure<MailSettings>(configuration.GetSection("MailSettings"));
+            services.Configure<AzurePortalStorageSettings>(configuration.GetSection("AzurePortalStorageSettings"));
             #endregion
 
             #region Services
-           
+
             services.AddTransient<IAzureStorageService, AzureStorageService>();
             services.AddTransient<IDateTimeService, DateTimeService>();
             services.AddTransient<IEmailService, EmailService>();
