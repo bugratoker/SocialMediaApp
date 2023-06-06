@@ -3,9 +3,11 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Pressable }
 import { styles } from './style.js';
 
 
-const main = ({ navigation }) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+const searchresult = ({ route, navigation }) => {
+  const [search, setSearch] = useState('');
+  const handleSearch = () => {
+    navigation.navigate('SearchPage', {searchText: search });
+  }
 
   return (
     <View style={styles.container}>
@@ -30,17 +32,16 @@ const main = ({ navigation }) => {
         />
       </TouchableOpacity>  
     </View>
-      </View>
-      <View style={styles.main}>
-        <Pressable onPress={() => navigation.navigate('Sign In')}>
-            <Text style={styles.title}>Login</Text>
-        </Pressable>
-        <Pressable onPress={() => navigation.navigate('Register')}>
-            <Text style={styles.title}>Register</Text>
-        </Pressable>
-      </View>  
-      <View style={styles.footer}>
-      </View>  
+    </View>
+     
+    <View style={styles.main}>
+        <Text>{route.params.searchText}</Text>
+    
+    </View>
+       
+    <View style={styles.footer}>
+          
+    </View>  
     
     </View>
   );
@@ -48,4 +49,4 @@ const main = ({ navigation }) => {
 
 
 
-export default main;
+export default searchresult;

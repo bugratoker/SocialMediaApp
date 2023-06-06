@@ -3,7 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Pressable }
 import { styles } from './style.js';
 
 
-const main = ({ navigation }) => {
+const profile = ({ navigation }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -31,14 +31,7 @@ const main = ({ navigation }) => {
       </TouchableOpacity>  
     </View>
       </View>
-      <View style={styles.main}>
-        <Pressable onPress={() => navigation.navigate('Sign In')}>
-            <Text style={styles.title}>Login</Text>
-        </Pressable>
-        <Pressable onPress={() => navigation.navigate('Register')}>
-            <Text style={styles.title}>Register</Text>
-        </Pressable>
-      </View>  
+      
       <View style={styles.footer}>
       </View>  
     
@@ -48,4 +41,4 @@ const main = ({ navigation }) => {
 
 
 
-export default main;
+export default profile;

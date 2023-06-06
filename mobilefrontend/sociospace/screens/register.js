@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
-import { styles } from '../style.js';
+import { styles } from './style.js';
 
 const register = ({ navigation }) => {
   const [username, setUsername] = useState('');
@@ -29,18 +29,22 @@ const register = ({ navigation }) => {
           style={{ width: 290, height: 70 }}
         />
       </TouchableOpacity> 
-      <Image
-        source={require('../images/search.png')}
-        style={{ width: 60, height: 70 }}
-      />
-      <Image
-        source={require('../images/profile.png')}
-        style={{ width: 60, height: 70 }}
-      />
-      </View>
+      <TouchableOpacity  onPress={() => navigation.navigate('SearchPage')}>
+        <Image
+          source={require('../images/search.png')}
+          style={{ width: 60, height: 70 }}
+        />
+      </TouchableOpacity> 
+      <TouchableOpacity  onPress={() => navigation.navigate('Profile')}>
+        <Image
+          source={require('../images/profile.png')}
+          style={{ width: 60, height: 70 }}
+        />
+      </TouchableOpacity>  
+    </View>
       </View>
       <View style={styles.main}>
-        <Text style={styles.title}>Login</Text>
+        <Text style={styles.title}>Register</Text>
         <TextInput
           style={styles.input}
           placeholder="Username"
