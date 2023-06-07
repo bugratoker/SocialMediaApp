@@ -142,7 +142,7 @@ export const styles = StyleSheet.create({
         height: '10%',
     },
     headerlogo: {
-        flex : 1,
+        flex : 20,
         
         alignContent: 'center',
         justifyContent: 'center',
@@ -169,7 +169,7 @@ export const styles = StyleSheet.create({
         height: '10%',
     },
     main: {
-        flex: 2,
+        flex: 18,
         alignContent: 'center',
         justifyContent: 'center',
         
