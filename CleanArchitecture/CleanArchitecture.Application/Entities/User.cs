@@ -18,9 +18,8 @@ namespace CleanArchitecture.Core.Entities
         public string ProfilePhoto { get; set; }
         public bool EmailConfirmed { get; set; }
         public Account Account { get; set; }
-
-        public ICollection<Follower> Followers { get;set;} 
-        
+        public ICollection<Follower> Followers { get;set;}
+        public ICollection<Like> Likes { get; set; }
 
     }
 }

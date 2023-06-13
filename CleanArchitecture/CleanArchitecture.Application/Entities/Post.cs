@@ -18,6 +18,7 @@ namespace CleanArchitecture.Core.Entities
         public int AccountId { get; set; }
         public Space Space { get; set; }
         public int SpaceId { get; set; }
+        public List<Like> Likes { get; set; }
 
     }
 }

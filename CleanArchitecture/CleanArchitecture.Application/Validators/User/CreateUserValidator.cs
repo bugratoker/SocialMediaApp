@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace CleanArchitecture.Core.Validators.User
 {
-    public class UserValidator : AbstractValidator<CreateUserCommand>
+    public class CreateUserValidator : AbstractValidator<CreateUserCommand>
     {
         private readonly IUserRepositoryAsync _userRepositoryAsync;
-        public UserValidator(IUserRepositoryAsync userRepositoryAsync)
+        public CreateUserValidator(IUserRepositoryAsync userRepositoryAsync)
         {
             _userRepositoryAsync = userRepositoryAsync;
 

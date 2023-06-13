@@ -10,5 +10,6 @@ namespace CleanArchitecture.Core.Interfaces.Repositories
     public interface ISpaceRepositoryAsync : IGenericRepositoryAsync<Space>
     {
         Task<List<Post>> GetPostsOfSpace(string spaceName);
+        Task<bool> IsUniqueNameAsync(string name);
     }
 }

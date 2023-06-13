@@ -20,11 +20,11 @@ namespace CleanArchitecture.Infrastructure.Contexts
         public DbSet<Post> Posts { get; set; }
         public DbSet<Follower> Followers{ get; set; }
         public DbSet<Space> Spaces{ get; set; }
-
+        public DbSet<Like> Likes { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-
+            modelBuilder.Entity<Like>().HasKey(l => new { l.PostId, l.UserId });
 
         }
     }

@@ -72,6 +72,24 @@ namespace CleanArchitecture.Infrastructure.Migrations
                     b.ToTable("Followers");
                 });
 
+            modelBuilder.Entity("CleanArchitecture.Core.Entities.Like", b =>
+                {
+                    b.Property<Guid>("PostId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LikedUserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("PostId", "UserId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Likes");
+                });
+
             modelBuilder.Entity("CleanArchitecture.Core.Entities.Post", b =>
                 {
                     b.Property<Guid>("Id")
@@ -193,6 +211,21 @@ namespace CleanArchitecture.Infrastructure.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("CleanArchitecture.Core.Entities.Like", b =>
+                {
+                    b.HasOne("CleanArchitecture.Core.Entities.Post", null)
+                        .WithMany("Likes")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CleanArchitecture.Core.Entities.User", null)
+                        .WithMany("Likes")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("CleanArchitecture.Core.Entities.Post", b =>
                 {
                     b.HasOne("CleanArchitecture.Core.Entities.Account", "Account")
@@ -217,6 +250,11 @@ namespace CleanArchitecture.Infrastructure.Migrations
                     b.Navigation("Posts");
                 });
 
+            modelBuilder.Entity("CleanArchitecture.Core.Entities.Post", b =>
+                {
+                    b.Navigation("Likes");
+                });
+
             modelBuilder.Entity("CleanArchitecture.Core.Entities.Space", b =>
                 {
                     b.Navigation("Posts");
@@ -227,6 +265,8 @@ namespace CleanArchitecture.Infrastructure.Migrations
                     b.Navigation("Account");
 
                     b.Navigation("Followers");
+
+                    b.Navigation("Likes");
                 });
 #pragma warning restore 612, 618
         }

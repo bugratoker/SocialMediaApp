@@ -1,8 +1,6 @@
 ﻿using CleanArchitecture.Core.Features.Spaces.Commands;
-using CleanArchitecture.Core.Features.Spaces.Queries;
-using CleanArchitecture.Core.Features.User.Commands.UploadUserProfilePhoto;
+using CleanArchitecture.Core.Features.Spaces.Queries.GetPostsOfSpace;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -15,13 +13,9 @@ namespace CleanArchitecture.WebApi.Controllers.v1
 
         //AddSpace
         [HttpPost("CreateSpace/{spaceName}")]
-        public async Task<IActionResult> CreateSpace(string spaceName)
-        {
+        public async Task<IActionResult> CreateSpace(CreateSpaceCommand createSpaceCommand)  {
 
-            var result = await Mediator.Send(new CreateSpaceCommand
-            {
-                SpaceName = spaceName
-            });
+            var result = await Mediator.Send(createSpaceCommand);
 
             return Ok(result);
         }

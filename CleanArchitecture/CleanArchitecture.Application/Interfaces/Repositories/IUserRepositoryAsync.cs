@@ -14,5 +14,6 @@ namespace CleanArchitecture.Core.Interfaces.Repositories
         Task<User> UpdateUserProfilePhoto(string username,string url);
         Task<Boolean> IsUniqueUsername(string username);
         Task<Boolean> IsUniqueEmail(string email);
+        Task<User> FindByAccountId(int accountId);
     }
 }

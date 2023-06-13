@@ -109,6 +109,7 @@ namespace CleanArchitecture.Infrastructure
             services.AddTransient<IFollowerRepositoryAsync, FollowerRepositoryAsync>();
             services.AddTransient<IPostRepositoryAsync, PostRepositoryAsync>();
             services.AddTransient<ISpaceRepositoryAsync, SpaceRepositoryAsync>();
+            services.AddTransient<ILikeRepositoryAsync,LikeRepositoryAsync>();
             #endregion
 
            // services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();

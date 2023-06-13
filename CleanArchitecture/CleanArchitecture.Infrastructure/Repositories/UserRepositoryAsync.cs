@@ -52,5 +52,10 @@ namespace CleanArchitecture.Infrastructure.Repositories
         {
             return _users.AllAsync(x => x.Username != username);
         }
+
+        public Task<User> FindByAccountId(int accountId)
+        {
+            return _users.FirstAsync(u => u.Account.Id == accountId);
+        }
     }
 }

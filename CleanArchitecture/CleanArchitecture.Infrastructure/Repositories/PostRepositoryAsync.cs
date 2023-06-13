@@ -19,5 +19,38 @@ namespace CleanArchitecture.Infrastructure.Repositories
         {
             _posts = dbContext.Set<Post>();
         }
+
+        public async Task<Post> DeleteByIdAsync(string id)
+        {
+            var guid = new Guid(id);
+            
+            var post = await _posts.FirstOrDefaultAsync(x => x.Id==guid);
+            if (post != null)
+            {
+                _posts.Remove(post);
+                await _dbContext.SaveChangesAsync();
+                return post;
+
+            }
+            throw new InvalidOperationException($"There is no post specified id {id}");
+
+        }
+
+        public async Task<Post> GetByGuidAsync(Guid id)
+        {
+           return await _posts.FirstAsync(x => x.Id==id);
+        }
+
+        public async Task<int> GetLikeCountOfPost(Guid id)
+        {
+
+
+            var LikeCount = await _posts.Where(p => p.Id == id).
+                                    Include(p => p.Likes).
+                                    SelectMany(p => p.Likes).CountAsync();
+
+            return LikeCount;
+
+        }
     }
 }

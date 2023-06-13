@@ -28,10 +28,16 @@ namespace CleanArchitecture.Infrastructure.Repositories
             }
             var result = await spaces.Where(s=>s.SpaceName==spaceName)
                                      .Include(s => s.Posts)
+                                     .ThenInclude(p=>p.Likes)
                                      .SelectMany(s => s.Posts)
                                      .ToListAsync();
             //var x = result.SelectMany(s => s.Posts);   
             return result;
+        }
+
+        public Task<bool> IsUniqueNameAsync(string name)
+        {
+           return spaces.AllAsync(s=>s.SpaceName!=name);
         }
     }
 }

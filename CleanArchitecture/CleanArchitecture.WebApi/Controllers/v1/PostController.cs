@@ -1,5 +1,6 @@
 ﻿using CleanArchitecture.Core.DTOs.Post;
 using CleanArchitecture.Core.Features.Posts.Commands;
+using CleanArchitecture.Core.Features.Posts.Commands.DeletePostById;
 using CleanArchitecture.Core.Features.User.Commands.UploadUserProfilePhoto;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -12,8 +13,10 @@ namespace CleanArchitecture.WebApi.Controllers.v1
     
     [ApiVersion("1.0")]
     [Authorize]
+    
     public class PostController : BaseApiController
     {
+        #region Create Post
         [HttpPost("CreatePost")]
         public async Task<IActionResult> CreatePost([FromForm]CreatePostRequest createPostRequest)
         {
@@ -39,5 +42,16 @@ namespace CleanArchitecture.WebApi.Controllers.v1
 
             return Ok(result);
         }
+        #endregion
+
+        #region DeletePost
+
+        [HttpDelete("DeletePostById/{id}")]
+        public async Task<IActionResult> DeletePost(string id)
+        {
+
+            return Ok(await Mediator.Send(new DeletePostByIdCommand { Id = id }));
+        }
+        #endregion
     }
 }
