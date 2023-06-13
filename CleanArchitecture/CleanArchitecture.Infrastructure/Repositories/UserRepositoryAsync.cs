@@ -53,9 +53,33 @@ namespace CleanArchitecture.Infrastructure.Repositories
             return _users.AllAsync(x => x.Username != username);
         }
 
-        public Task<User> FindByAccountId(int accountId)
+        public async Task<User> FindByAccountId(int accountId)
         {
-            return _users.FirstAsync(u => u.Account.Id == accountId);
+            return await _users.FirstAsync(u => u.Account.Id == accountId);
+        }
+
+        public async Task<List<Post>> GetPostsOfUserByUserId(int userId)
+        {
+            var user = await _users.SingleAsync(s => s.Id  == userId);
+            
+            if (user == null)
+            {
+                throw new ArgumentException($"no user found with id : {userId}");
+            }
+            var result = await _users.Where(u => u.Id== userId)
+                                     .Include(s => s.Account)
+                                     .ThenInclude(p => p.Posts)
+                                     .ThenInclude(p=>p.Likes)
+                                     .SelectMany(u => u.Account.Posts)
+                                     .ToListAsync();
+
+
+            /*            var result = await spaces.Where(s=>s.SpaceName==spaceName)
+                                     .Include(s => s.Posts)
+                                     .ThenInclude(p=>p.Likes)
+                                     .SelectMany(s => s.Posts)
+                                     .ToListAsync();*/
+            return result;
         }
     }
 }

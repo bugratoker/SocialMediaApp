@@ -1,10 +1,12 @@
-﻿using CleanArchitecture.Core.Features.User.Commands.CreateUser;
+﻿using CleanArchitecture.Core.Features.Spaces.Queries.GetPostsOfSpace;
+using CleanArchitecture.Core.Features.User.Commands.CreateUser;
 using CleanArchitecture.Core.Features.User.Commands.DeleteUserById;
 using CleanArchitecture.Core.Features.User.Commands.FollowUser;
 using CleanArchitecture.Core.Features.User.Commands.UploadUserPhoto;
 using CleanArchitecture.Core.Features.User.Commands.UploadUserProfilePhoto;
 using CleanArchitecture.Core.Features.User.Commands.UserAuthentication;
 using CleanArchitecture.Core.Features.User.Queries.GetFollowersOfUsersByUsername;
+using CleanArchitecture.Core.Features.User.Queries.GetPostsOfUserByUserId;
 using CleanArchitecture.Core.Features.User.Queries.GetUserByUsername;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -91,7 +93,19 @@ namespace CleanArchitecture.WebApi.Controllers.v1
             return Ok(result);
         }
         #endregion
+        #region Get Posts of User
+        [HttpGet("GetPostsOfUserByUserId/{userId}")]
+        public async Task<IActionResult> GetPostsOfUser(int userId)
+        {
 
+            var result = await Mediator.Send(new GetPostsOfUserByUserIdQuery { Id=userId});
+
+            return Ok(result);
+        }
+
+
+
+        #endregion
         #region Follow User
         [HttpPost("{userId}/{followedUserId}/FollowUser")]
         public async Task<IActionResult> FollowUser(int userId,int followedUserId)

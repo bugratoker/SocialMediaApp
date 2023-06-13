@@ -1,4 +1,5 @@
-﻿using CleanArchitecture.Core.Entities;
+﻿using CleanArchitecture.Core.DTOs.Post;
+using CleanArchitecture.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,6 @@ namespace CleanArchitecture.Core.Interfaces.Repositories
         Task<Boolean> IsUniqueUsername(string username);
         Task<Boolean> IsUniqueEmail(string email);
         Task<User> FindByAccountId(int accountId);
+        Task<List<Post>> GetPostsOfUserByUserId(int userId);
     }
 }
