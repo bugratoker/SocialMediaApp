@@ -13,15 +13,29 @@ namespace CleanArchitecture.Infrastructure.Repositories
 {
     public class LikeRepositoryAsync : GenericRepositoryAsync<Like>, ILikeRepositoryAsync
     {
-        public readonly DbSet<Like> _likes; 
+        public readonly DbSet<Like> _likes;
         public LikeRepositoryAsync(AppDbContext dbContext) : base(dbContext)
         {
             _likes = dbContext.Set<Like>();
         }
 
-        public  Task<Like> LikePostAsync(string postId, int userId)
+        public Task<Like> LikePostAsync(string postId, int userId)
         {
             throw new NotImplementedException();
+        }
+        public async Task<Like> UnlikePostAsync(string postId, int userId)
+        {
+            var guid = new Guid(postId);
+            var like = await _likes.Where(l => l.PostId == guid && l.UserId == userId).SingleAsync();
+            if (like != null)
+            {
+                var deletedLike =  _likes.Remove(like);
+                _dbContext.SaveChanges();
+                return deletedLike.Entity;
+            }
+            return null;
+
+            
         }
     }
 }

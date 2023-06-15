@@ -10,5 +10,7 @@ namespace CleanArchitecture.Core.Interfaces.Repositories
     public interface ILikeRepositoryAsync : IGenericRepositoryAsync<Like>
     {
         Task<Like> LikePostAsync(string postId,int userId);
+        Task<Like> UnlikePostAsync(string postId, int userId);
+        
     }
 }
