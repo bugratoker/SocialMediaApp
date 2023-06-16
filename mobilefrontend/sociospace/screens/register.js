@@ -35,7 +35,7 @@ const register = ({ navigation }) => {
           style={{ width: 60, height: 70 }}
         />
       </TouchableOpacity> 
-      <TouchableOpacity  onPress={() => navigation.navigate('Profile')}>
+      <TouchableOpacity  onPress={() => navigation.navigate('Sign In')}>
         <Image
           source={require('../images/profile.png')}
           style={{ width: 60, height: 70 }}
