@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, SectionList } from 'react-native';
 import { styles } from './style.js';
 
 const register = ({ navigation }) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
+  const [UserName, setUsername] = useState('');
+  const [Password, setPassword] = useState('');
+  const [Email, setEmail] = useState('');
+  const [FirstName, setFirstName] = useState('');
+  const [LastName, setLastName] = useState('');
+  const [ConfirmPassword, setConfirmPassword] = useState('');
 
   const handleLogin = () => {
     // Perform login authentication logic here
@@ -47,25 +50,47 @@ const register = ({ navigation }) => {
         <Text style={styles.title}>Register</Text>
         <TextInput
           style={styles.input}
-          placeholder="Username"
-          value={username}
-          onChangeText={(text) => setUsername(text)}
+          placeholder="Name"
+          value={FirstName}
+          onChangeText={(text) => setFirstName(text)}
         />
         
       
         <TextInput
           style={styles.input}
-          placeholder="Password"
-          secureTextEntry
-          value={password}
-          onChangeText={(text) => setPassword(text)}
+          placeholder="Surname"
+          
+          value={LastName}
+          onChangeText={(text) => setLastName(text)}
+        />
+         <TextInput
+          style={styles.input}
+          placeholder="Username"
+          
+          value={UserName}
+          onChangeText={(text) => setUsername(text)}
         />
         <TextInput
           style={styles.input}
           placeholder="Email"
-          value={email}
+          value={Email}
           onChangeText={(text) => setEmail(text)}
         />
+         <TextInput
+          style={styles.input}
+          placeholder="Password"
+          secureTextEntry
+          value={Password}
+          onChangeText={(text) => setPassword(text)}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Confirm Password"
+          secureTextEntry
+          value={ConfirmPassword}
+          onChangeText={(text) => setConfirmPassword(text)}
+        />
+        
         <TouchableOpacity style={styles.button} onPress={handleLogin}>
           <Text style={styles.buttonText}>Register</Text>
         </TouchableOpacity>

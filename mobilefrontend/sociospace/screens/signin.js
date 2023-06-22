@@ -11,6 +11,7 @@ const signin = ({ navigation }) => {
     if (username === 'admin' && password === 'password') {
       // Successful login
       alert('Login successful!');
+      navigation.navigate('Main');
     } else {
       // Failed login
       alert('Invalid username or passwordd!');
@@ -34,7 +35,7 @@ const signin = ({ navigation }) => {
           style={{ width: 60, height: 70 }}
         />
       </TouchableOpacity> 
-      <TouchableOpacity  onPress={() => navigation.navigate('Profile')}>
+      <TouchableOpacity  onPress={() => navigation.navigate('Sign In')}>
         <Image
           source={require('../images/profile.png')}
           style={{ width: 60, height: 70 }}
