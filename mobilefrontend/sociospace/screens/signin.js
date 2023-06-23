@@ -5,6 +5,8 @@ import axios from 'axios'
 const signin = ({ navigation }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [jwToken, setJwToken] = useState('');
+  const [UserId, setUserId] = useState('');
 
   const handleLogin = async () => {
     try{ 
@@ -14,6 +16,8 @@ const signin = ({ navigation }) => {
     })
       
     if(response.data.succeeded){
+      setJwToken(response.data.data.token);
+      setUserId(response.data.data.userId);
       alert('Login successful!')
       navigation.navigate("Main");
     }

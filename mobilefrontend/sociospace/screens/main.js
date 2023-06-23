@@ -3,11 +3,42 @@ import { View,  TextInput, TouchableOpacity, StyleSheet, Image, Pressable,FlatLi
 import { styles } from './style.js';
 import { Header, Text, Button, Input, Avatar, Icon } from 'react-native-elements';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import signin from './signin';
+import axios from 'axios';
 
 
 const main = ({ navigation }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const handleLike = async () => {
+    try{
+      const config = {
+        headers: { Authorization: `Bearer `+signin.jwToken }
+      };
+    
+      const bodyParameters = {
+        "postId": "8e2125d2-82a1-450d-ea91-08db7415489c",
+        "userId": 15
+      }
+      const response = await axios.post( 
+        'https://sociospace.azurewebsites.net/api/v1/Like/LikePost',
+        bodyParameters,
+        config
+      ).then(console.log).catch(console.log);
+ 
+   
+      
+    if(response.data.succeeded){
+      
+      alert('Liked!') 
+    }
+
+    }
+    catch(error){
+      alert("response.data.message");
+    } 
+  };
+
   const MOCK_DATA = [
     {
       id: '1',
@@ -54,9 +85,7 @@ const main = ({ navigation }) => {
   title="Like"
   type="clear"
   icon={<Icon name="thumbs-up" type="font-awesome" color="blue" />}
-  onPress={() => {
-  
-  }}
+  onPress={handleLike} 
   />
   <Button
   title="Comment"
@@ -94,6 +123,12 @@ const main = ({ navigation }) => {
     </View>
       </View>
       <View style={styles.main}>
+        <TouchableOpacity  onPress={() => navigation.navigate('AddPost')}>
+          <Image
+            source={require('../images/add-button.png')}
+            style={{ width: 70, height: 70 }}
+          />
+         </TouchableOpacity>  
       <SafeAreaProvider >
       <SafeAreaView style={{ flex: 1 }}>
        

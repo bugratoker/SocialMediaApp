@@ -7,6 +7,7 @@ import register from './screens/register'
 import profile from './screens/profile'
 import searchpage from './screens/searchpage'
 import searchresult from './screens/searchresult'
+import addpost from './screens/addpost';
 
 const Stack = createStackNavigator()
 console.log("hi");
@@ -22,6 +23,7 @@ const App = () => {
         <Stack.Screen name="Profile" component={profile} />
         <Stack.Screen name="SearchPage" component={searchpage} />
         <Stack.Screen name="SearchResult" component={searchresult} />
+        <Stack.Screen name="AddPost" component={addpost} />
       </Stack.Navigator>
     </NavigationContainer>
   );
