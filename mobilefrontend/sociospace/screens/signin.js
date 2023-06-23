@@ -6,8 +6,24 @@ const signin = ({ navigation }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
-    // Perform login authentication logic here
+  const handleLogin = async () => {
+    try{ 
+    const response=await axios.post('https://sociospace.azurewebsites.net/api/v1/User/Login', {
+      "username": username,
+      "password": password,
+    })
+
+    if(response.data.succeeded){
+      alert('Login successful!')
+      navigation.navigate("Main");
+    }
+
+  }
+  catch(error){
+    alert('Invalid username or passwordd!');
+  }
+
+  
     if (username === 'admin' && password === 'password') {
       // Successful login
       alert('Login successful!');
