@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, SectionList } from 'react-native';
 import { styles } from './style.js';
-
+import axios from 'axios'
 const register = ({ navigation }) => {
   const [UserName, setUsername] = useState('');
   const [Password, setPassword] = useState('');
@@ -10,15 +10,20 @@ const register = ({ navigation }) => {
   const [LastName, setLastName] = useState('');
   const [ConfirmPassword, setConfirmPassword] = useState('');
 
-  const handleLogin = () => {
-    // Perform login authentication logic here
-    if (username === 'admin' && password === 'password') {
-      // Successful login
-      alert('Login successful!');
-    } else {
-      // Failed login
-      alert('Invalid username or passwordd!');
+  const handleRegister = async () => {
+    const response=await axios.post('https://sociospace.azurewebsites.net/api/v1/User/Register', { 
+      "name": FirstName,
+      "surname": LastName,
+      "email": Email,
+      "password": Password,
+      "username": UserName,
+    })
+    
+    alert(response.data.message);
+    if(response.data.succeeded){
+      navigation.navigate('Login');
     }
+   
   };
 
   return (
@@ -91,7 +96,7 @@ const register = ({ navigation }) => {
           onChangeText={(text) => setConfirmPassword(text)}
         />
         
-        <TouchableOpacity style={styles.button} onPress={handleLogin}>
+        <TouchableOpacity style={styles.button} onPress={handleRegister}>
           <Text style={styles.buttonText}>Register</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Sign In')}>
