@@ -9,8 +9,8 @@ const signin = ({ navigation }) => {
   const handleLogin = async () => {
     try{ 
     const response=await axios.post('https://sociospace.azurewebsites.net/api/v1/User/Login', {
-      "username": "string7",
-      "password": "string7",
+      "username": username,
+      "password": password,
     })
       
     if(response.data.succeeded){
