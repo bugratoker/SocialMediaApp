@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { styles } from './style.js';
-
+import axios from 'axios'
 const signin = ({ navigation }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -9,29 +9,19 @@ const signin = ({ navigation }) => {
   const handleLogin = async () => {
     try{ 
     const response=await axios.post('https://sociospace.azurewebsites.net/api/v1/User/Login', {
-      "username": username,
-      "password": password,
+      "username": "string7",
+      "password": "string7",
     })
-
+      
     if(response.data.succeeded){
       alert('Login successful!')
       navigation.navigate("Main");
     }
-
-  }
-  catch(error){
-    alert('Invalid username or passwordd!');
-  }
-
-  
-    if (username === 'admin' && password === 'password') {
-      // Successful login
-      alert('Login successful!');
-      navigation.navigate('Main');
-    } else {
-      // Failed login
-      alert('Invalid username or passwordd!');
+    
     }
+    catch(error){
+      alert('Invalid username or password!');
+    } 
   };
 
   return (
