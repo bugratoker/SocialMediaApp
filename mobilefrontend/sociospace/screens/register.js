@@ -11,19 +11,25 @@ const register = ({ navigation }) => {
   const [ConfirmPassword, setConfirmPassword] = useState('');
 
   const handleRegister = async () => {
-    const response=await axios.post('https://sociospace.azurewebsites.net/api/v1/User/Register', { 
-      "name": FirstName,
-      "surname": LastName,
-      "email": Email,
-      "password": Password,
-      "username": UserName,
-    })
+    try {
+      const response=await axios.post('https://sociospace.azurewebsites.net/api/v1/User/Register', { 
+        "name": FirstName,
+        "surname": LastName,
+        "email": Email,
+        "password": Password,
+        "username": UserName,
+      })
     
-    alert(response.data.message);
-    if(response.data.succeeded){
-      navigation.navigate('Login');
+      if(response.data.succeeded){
+        alert('Register successful!')
+        navigation.navigate('Sign In');
+      }
+      
+      
     }
-   
+    catch (error) {
+      alert("Username or Email is already used. Please enter valid values.")
+    }
   };
 
   return (
